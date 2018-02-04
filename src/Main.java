@@ -12,8 +12,26 @@ public class Main {
 		
 		Scanner scanner = new Scanner(System.in);
 		int input = scanner.nextInt();
-	
+		
+		
+		// Display recursive Fibonacci results
+		System.out.println("Recursive Fibonacci Number Generation:"); //Inform user of calculation method
+		
+		for (int i = 0; i < input; i++) {
+			System.out.println(fiboSeriesRec(i));
+			
+		}
 	}
+	 
+	
+	// Recursive Fibonacci number calculation
+	public static int fiboSeriesRec(int number) {
+		if (number == 0 || number == 1) {
+			return number;
+		}
+		return fiboSeriesRec(number-1) + fiboSeriesRec(number-2);
+	}
+	
 	
 	
 }
