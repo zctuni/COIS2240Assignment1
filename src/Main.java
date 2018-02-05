@@ -17,25 +17,45 @@ public class Main {
 		// Display recursive Fibonacci results
 		System.out.println("Recursive Fibonacci Number Generation:"); // Inform user of calculation method
 		
+		long startTimeRec=  System.nanoTime(); // Initialize timing of iterative number calculation
+		
 		for (int i = 0; i < input; i++) {
 			System.out.println(fiboSeriesRec(i));
 			
 		}
 		
-		System.out.println(" "); // Output blank line to console for formatting reasons
+		long endTimeRec = System.nanoTime();
+		
+        long timeElapsedRec= endTimeRec-startTimeRec;
+        
+        System.out.println("Generating these numbers took: " + timeElapsedRec + " nanoseconds"
+        		+ " or " + timeElapsedRec/1000000 + " milliseconds.");
+		
+        
+        System.out.println(" "); // Output blank line to console for formatting reasons
 		
 		// Display iterative Fibonacci results
 		System.out.println("Iterative Fibonacci Number Generation:"); // Inform user of calculation method		
 		
+		long startTimeIte=  System.nanoTime(); // Initialize timing of iterative number calculation
+		
 		for (int i = 0; i < input; i++) {
-			System.out.println(fiboSeriesIte(i));	
+			System.out.println(fiboSeriesIte(i));
 			
 		}
+		
+		long endTimeIte = System.nanoTime();
+		
+        long timeElapsedIte= endTimeIte-startTimeIte;
+        
+        System.out.println("Generating these numbers took: " + timeElapsedIte + " nanoseconds"
+        		+ " or " + timeElapsedIte/1000000 + " milliseconds.");
+		
 	}
 	 
 	
 	// Recursive Fibonacci number calculation
-	public static int fiboSeriesRec(int number) {
+	public static long fiboSeriesRec(long number) {
 		if (number == 0 || number == 1) {
 			return number;
 		}
@@ -44,10 +64,10 @@ public class Main {
 	
 	
 	// Iterative Fibonacci number calculation
-	public static int fiboSeriesIte(int number) {
-		int fib1 = 0;
-		int fib2 = 1;
-		int fibValue =0;
+	public static long fiboSeriesIte(long number) {
+		long fib1 = 0;
+		long fib2 = 1;
+		long fibValue =0;
 		
 		for (int count = 0; count <= number; count++) {
 			fibValue = fib1;
