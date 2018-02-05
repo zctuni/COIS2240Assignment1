@@ -100,24 +100,33 @@ public class Main {
 	// Recursive Fibonacci number calculation
 	// Adapted from http://www.java2s.com/Tutorial/Java/0100__Class-Definition/Recursivefibonaccimethod.htm
 	public static long fiboSeriesRec(long number) {
+		
 		if (number == 0 || number == 1) {
+			
 			return number;
+			
 		}
+		
 		return fiboSeriesRec(number-1) + fiboSeriesRec(number-2);
+	
 	}
 	
 	
 	// Iterative Fibonacci number calculation
 	// Adapted from http://www.java-fries.com/2014/11/nth-fibonacci-number-java/
 	public static long fiboSeriesIte(long number) {
+		
+		// Initiate required variables
 		long fib1 = 0;
 		long fib2 = 1;
 		long fibValue =0;
 		
 		for (int count = 0; count <= number; count++) {
+			
 			fibValue = fib1; 
-			fib1 = fib1 + fib2;
-			fib2 = fibValue;
+			fib1 = fib1 + fib2; // Calculate next Fibonacci value
+			fib2 = fibValue; // Pass current Fibonacci value to fib2
+			
 		}
 		
 		return fibValue;
